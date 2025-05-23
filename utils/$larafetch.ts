@@ -6,7 +6,7 @@ const CSRF_HEADER = "X-XSRF-TOKEN";
 
 export const $larafetch = $fetch.create({
   credentials: "include",
-  async onRequest({ request, options }) {
+  async onRequest({ options }) {
     const { backendUrl, frontendUrl } = useRuntimeConfig().public;
     const event = typeof useEvent === "function" ? useEvent() : null;
     let token = event
